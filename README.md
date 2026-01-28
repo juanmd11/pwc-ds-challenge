@@ -7,23 +7,25 @@ The goal is to compare a simple baseline against a more informative model and ju
 
 ## Project structure
 
-project1/
+```
+pwc-ds-challenge/
 ├── data/
-│ └── raw/
-│ ├── people.csv
-│ ├── salary.csv
-│ └── descriptions.csv
+│   └── raw/
+│       ├── people.csv         # Personal information dataset
+│       ├── salary.csv         # Salary information
+│       └── descriptions.csv   # Job descriptions
+├── models/                    # Serialized model artifacts
 ├── notebooks/
-│ ├── 01_eda.ipynb
-│ └── 02_final_report.ipynb
+│   ├── 01_eda.ipynb          # Exploratory Data Analysis
+│   └── 02_final_report.ipynb # Final modeling pipeline and evaluation
 ├── src/
-│ ├── data.py
-│ ├── features.py
-│ ├── models.py
-│ └── evaluation.py
-├── requirements.txt
-└── README.md
-
+│   ├── data.py               # Data loading and preprocessing
+│   ├── features.py           # Feature engineering
+│   ├── models.py             # Model training and utilities
+│   └── evaluation.py         # Model evaluation metrics
+├── pyproject.toml            # Project metadata and configuration
+└── README.md                 # Project documentation
+```
 
 ---
 
@@ -50,3 +52,54 @@ project1/
 
 Job Title is evaluated as an additional experiment due to its high cardinality and potential impact on generalization.
 
+---
+
+## Setup Instructions
+
+### 1. Environment Setup
+
+This project uses `uv` for fast Python package management. Follow these steps to set up your environment:
+
+#### Install uv (if not already installed)
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+#### Create virtual environment and install dependencies
+```bash
+# Create virtual environment and install all dependencies
+uv sync --extra lab
+
+# Activate the virtual environment
+# On macOS/Linux:
+source .venv/bin/activate
+# On Windows:
+# .venv\Scripts\activate
+```
+
+#### Run Jupyter Notebooks
+
+```bash
+jupyter notebook
+```
+
+This will open Jupyter in your browser. Navigate to the `notebooks/` directory to access the notebooks.
+
+---
+
+## Running the Full Pipeline
+
+To reproduce the complete analysis and model training:
+
+1. **Execute all steps in the final report notebook**: [notebooks/02_final_report.ipynb](notebooks/02_final_report.ipynb)
+   
+   This notebook contains the complete pipeline:
+   - Data loading and preprocessing
+   - Feature engineering
+   - Model training (baseline and linear regression)
+   - Model evaluation with bootstrap confidence intervals
+   - Model serialization for deployment
+
+   Run all cells in sequence to generate the trained model artifacts.
+
+---
