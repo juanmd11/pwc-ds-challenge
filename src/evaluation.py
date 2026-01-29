@@ -2,7 +2,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
 
-def bootstrap_mae_ci(y_true, y_pred, n_boot: int = 1000, alpha: float = 0.05, random_state: int = 42):
+def bootstrap_mae_ci(y_true: list, y_pred: list, n_boot: int = 1000, alpha: float = 0.05, random_state: int = 42):
     """
     Estimate a confidence interval for MAE using bootstrap resampling.
 

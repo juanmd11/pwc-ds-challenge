@@ -14,7 +14,6 @@ pwc-ds-challenge/
 │       ├── people.csv         # Personal information dataset
 │       ├── salary.csv         # Salary information
 │       └── descriptions.csv   # Job descriptions
-├── models/                    # Serialized model artifacts
 ├── notebooks/
 │   ├── 01_eda.ipynb          # Exploratory Data Analysis
 │   └── 02_final_report.ipynb # Final modeling pipeline and evaluation
